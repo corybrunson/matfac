@@ -11,7 +11,8 @@ Description: This package contains methods to identify optimal row and column
     based on matrix factorization.
 Depends: 
     R (>= 3.0.1)
-Imports: 
+Imports:
+    nmf
 Suggests: 
 License: GPL-2
 VignetteBuilder: knitr
