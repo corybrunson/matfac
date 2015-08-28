@@ -12,7 +12,7 @@ Description: This package contains methods to identify optimal row and column
 Depends: 
     R (>= 3.0.1)
 Imports:
-    nmf
+    NMF
 Suggests: 
 License: GPL-2
 VignetteBuilder: knitr
