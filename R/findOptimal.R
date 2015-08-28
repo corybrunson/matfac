@@ -14,9 +14,10 @@ findOptima <-
         
         # Identify rows and columns with missing entries
         nar <- apply(mat, 1, function(vec) any(is.na(vec)))
-        car <- apply(mat, 2, function(vec) any(is.na(vec)))
+        nac <- apply(mat, 2, function(vec) any(is.na(vec)))
         # Remove unnecessary rows and columns
-        smat <- mat[which(nar), which(car)]
+        smat <- mat[which(nar), which(nac), drop = FALSE]
+        if(all(dim(smat) == 0)) return(list(list(which(!nar), which(!nac))))
         
         # Ladder algorithm optima
         ladder.opt <- ladderOptima(smat, pareto = pareto, to.remove = to.remove)
@@ -40,11 +41,11 @@ findOptima <-
         # Clean up results
         all.opt <- lapply(all.opt, function(opt) {
             # Restore original row and column indices as well as names
-            opt <- list(which(nar)[opt[[1]]], which(car)[opt[[2]]])
+            opt <- list(which(nar)[opt[[1]]], which(nac)[opt[[2]]])
             # If returning indices to keep, combine with those removed above
             if(!to.remove) opt <- list(
                 sort(union(opt[[1]], which(!nar))),
-                sort(union(opt[[2]], which(!car)))
+                sort(union(opt[[2]], which(!nac)))
             )
             opt
         })
