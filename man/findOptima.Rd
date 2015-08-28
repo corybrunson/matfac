@@ -4,7 +4,7 @@
 \alias{findOptima}
 \title{Seek optimum row and column subsets}
 \usage{
-findOptima(mat, pareto = FALSE)
+findOptima(mat, pareto = FALSE, to.remove = FALSE)
 }
 \arguments{
 \item{mat}{A matrix.}
@@ -13,8 +13,8 @@ findOptima(mat, pareto = FALSE)
 subsets.}
 }
 \description{
-This function applies the heuristic ladderOptima search to both a given
-matrix and its transpose, and synthesizes the results into optimal row and
-colmun subsets.
+This function applies the heuristic \code{\link{ladderOptima}} search to both
+a given matrix and its transpose, and synthesizes the results into optimal
+row and colmun subsets.
 }
 

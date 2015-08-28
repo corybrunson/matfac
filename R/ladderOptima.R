@@ -54,6 +54,7 @@ ladderOptima <-
             fresh <- fresh[paretoDat(dat)]
         }
     }
+    
     if(!to.remove) {
         
         # Convert the collection to one of row and column subsets to include
