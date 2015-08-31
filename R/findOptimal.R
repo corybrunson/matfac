@@ -10,7 +10,10 @@
 
 # Seek out optima in both directions
 findOptima <-
-    function(mat, pareto = FALSE, to.remove = FALSE) {
+    function(mat, pareto = FALSE, to.remove = FALSE, inf.na = TRUE) {
+        
+        # If infinite values are to be considered missing, remove them
+        mat[is.infinite(mat)] <- NA
         
         # Identify rows and columns with missing entries
         nar <- apply(mat, 1, function(vec) any(is.na(vec)))

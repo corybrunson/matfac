@@ -1,18 +1,16 @@
-Package: matfac
+Package: missing
 Type: Package
-Title: Matrix factorization methods
+Title: Handling and removing missing data
 Version: 0.1
 Date: 2015-08-27
 Authors@R: person('Jason Cory', 'Brunson', email = 'jabrunso@vt.edu',
     role = c('aut', 'cre'))
 Maintainer: Jason Cory Brunson <jabrunso@vt.edu>
-Description: This package contains methods to identify optimal row and column
-    subsets with no missing entries and to perform common clustering algorithms
-    based on matrix factorization.
+Description: This package contains methods to identify useful sub-matrices of a
+    matrix with missing entries.
 Depends: 
     R (>= 3.0.1)
 Imports:
-    NMF
 Suggests: 
 License: GPL-2
 VignetteBuilder: knitr

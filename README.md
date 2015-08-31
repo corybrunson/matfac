@@ -1,5 +1,5 @@
-matfac
+missing
 =======
 
-This R package performs matrix operations used to explore data.
+This R package handles matrices with missing entries.
 

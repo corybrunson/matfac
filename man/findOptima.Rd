@@ -4,7 +4,7 @@
 \alias{findOptima}
 \title{Seek optimum row and column subsets}
 \usage{
-findOptima(mat, pareto = FALSE, to.remove = FALSE)
+findOptima(mat, pareto = FALSE, to.remove = FALSE, inf.na = TRUE)
 }
 \arguments{
 \item{mat}{A matrix.}
