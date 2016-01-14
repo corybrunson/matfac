@@ -11,6 +11,12 @@ findOptima(mat, pareto = FALSE, to.remove = FALSE, inf.na = TRUE)
 
 \item{pareto}{Logical; whether to restrict the results to Pareto-optimal
 subsets.}
+
+\item{to.remove}{Logical; whether to return subsets of rows and columns to
+keep (\code{FALSE}) or to remove (\code{TRUE}).}
+
+\item{inf.na}{Logical; whether to treat infinite entries as undefined.
+Defaults to \code{TRUE}.}
 }
 \description{
 This function applies the heuristic \code{\link{ladderOptima}} search to both

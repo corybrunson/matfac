@@ -1,11 +1,15 @@
 #' Seek optimum row and column subsets
 #' 
 #' This function applies the heuristic \code{\link{ladderOptima}} search to both
-#' a given matrix and its transpose, and synthesizes the results into optimal
+#' a given matrix and its transpose, and synthesizes the results into optimal 
 #' row and colmun subsets.
 #' @param mat A matrix.
 #' @param pareto Logical; whether to restrict the results to Pareto-optimal 
 #'   subsets.
+#' @param to.remove Logical; whether to return subsets of rows and columns to 
+#'   keep (\code{FALSE}) or to remove (\code{TRUE}).
+#' @param inf.na Logical; whether to treat infinite entries as undefined.
+#'   Defaults to \code{TRUE}.
 #' @export
 
 # Seek out optima in both directions
@@ -13,7 +17,7 @@ findOptima <-
     function(mat, pareto = FALSE, to.remove = FALSE, inf.na = TRUE) {
         
         # If infinite values are to be considered missing, remove them
-        mat[is.infinite(mat)] <- NA
+        if(inf.na) mat[is.infinite(mat)] <- NA
         
         # Identify rows and columns with missing entries
         nar <- apply(mat, 1, function(vec) any(is.na(vec)))
